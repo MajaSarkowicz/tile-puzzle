@@ -73,3 +73,9 @@ Display an individual tile
 - Get value from user
 
 - Handle bad stream input
+
+### Helper classes / capabilities
+
+- Printing out to the console <=> overloading stream operators
+
+- Assesing relations between tiles <=> overloading relation operators
