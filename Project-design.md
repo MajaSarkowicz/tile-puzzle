@@ -76,6 +76,6 @@ Display an individual tile
 
 ### Helper classes / capabilities
 
-- Printing out to the console <=> overloading stream operators
+- `class Point` to index the tiles with int x and int y members
 
-- Assesing relations between tiles <=> overloading relation operators
+- `class Direction` to make code more readable considering the user input values, enum Directions member
