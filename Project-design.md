@@ -36,25 +36,29 @@
 
 #### `class Board`
 
-Display the game board
+- Display the game board
+
+- Randomize the starting state
+
+- Slide tiles
+
+- Determine if win condition reached
 
 **Members:**
 
-- `Tile tile{}`
-
-- `Tile neighbour{}`
-
-- `int dim{}`
+- `2d array of tile`
 
 ---
 
 #### `function main`
 
-Main game loop logic
+- Main game loop logic
+
+- Allow user to quit before winning
 
 ---
 
-#### `struct Tile`
+#### `class Tile`
 
 Display an individual tile
 
@@ -64,7 +68,7 @@ Display an individual tile
 
 ---
 
-#### `function getValue`
+#### `namespace UserInput`
 
 - Get value from user
 
