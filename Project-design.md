@@ -32,8 +32,40 @@
 
 ## Implementation - namespaces, classes and main()
 
-| Primary class/namespace/main | Implements top-level items | Members                        |
-| :--------------------------- | :------------------------- | :----------------------------- |
-| class Board                  | Display the game board     | Tile tile{}; Tile neighbour{}; |
-| function main                | Main game loop logic       |                                |
-| struct Tile                  | Display an individual tile | int m_val{};                   |
+### Primary class/namespace/main
+
+#### `class Board`
+
+Display the game board
+
+**Members:**
+
+- `Tile tile{}`
+
+- `Tile neighbour{}`
+
+- `int dim{}`
+
+---
+
+#### `function main`
+
+Main game loop logic
+
+---
+
+#### `struct Tile`
+
+Display an individual tile
+
+**Members:**
+
+- `int m_val{}`
+
+---
+
+#### `function getValue`
+
+- Get value from user
+
+- Handle bad stream input
