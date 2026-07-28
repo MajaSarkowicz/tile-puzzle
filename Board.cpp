@@ -10,7 +10,7 @@ std::ostream& operator<<(std::ostream& out, const Board& board){
     }
     for(int i{}; i < size; ++i){
         for(int j{}; j < size; ++j){
-            out << board.m_grid[i][j];
+            out << board.m_tiles[i][j];
         }
         out << std::endl;
     }
