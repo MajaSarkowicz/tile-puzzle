@@ -5,7 +5,8 @@ class Tile{
 private:
     int m_value{};
 public:
-    explicit Tile(int value): m_value{value}{};
+    Tile() = default;
+    Tile(int value): m_value{value}{}; // made non-explicit to handle implicit type conversion in Board.cpp
     bool isEmpty(){ return !m_value; };
     int getNum () const { return m_value; };
 };
