@@ -1,10 +1,8 @@
-#include "Tile.h"
-#include "Board.h"
+#include "UserInput.h"
 #include <iostream>
 
 int main(){
-    Board board{};
-    std::cout << board;
+    UserInput::App();
 
     return 0;
 }
