@@ -85,7 +85,7 @@ namespace UserInput
     // }
 
     void printRandomDir(){
-        std::cout << "Generating random direction... " << directionConversion(static_cast<Direction::Type>(Direction::random())) << std::endl;
+        std::cout << "Generating random direction... " << Direction::random() << std::endl;
     }
 
     void App_Step5(){
@@ -106,7 +106,7 @@ namespace UserInput
                 return;
             }
 
-            std::cout << "You entered direction: " << directionConversion(inputConversion(ch)) << '\n'; 
+            std::cout << "You entered direction: " << inputConversion(ch) << '\n'; 
         }
     }
 };

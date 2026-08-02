@@ -19,7 +19,8 @@ public:
     Type getType() const { return m_direction; }
     Direction operator-() const;
     friend std::ostream& operator<<(std::ostream& out, const Direction& direction);
-    static int random(){
-        return Random::get(static_cast<int>(Type::up), static_cast<int>(Type::right));
+    static Direction random(){
+        Type random{ static_cast<Type>(Random::get(0, Type::maxDirections - 1)) };
+        return Direction{ random };
     }
 };

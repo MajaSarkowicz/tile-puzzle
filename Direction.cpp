@@ -16,8 +16,13 @@ Direction Direction::operator-() const{
     }
 }
 
-std::ostream& operator<<(std::ostream& out, const Direction& direction){
-    out << direction.m_direction;
-
-    return out;
+std::ostream& operator<<(std::ostream& stream, const Direction& dir){
+        switch (dir.getType())
+    {
+    case Direction::up:     return (stream << "up");
+    case Direction::down:   return (stream << "down");
+    case Direction::left:   return (stream << "left");
+    case Direction::right:  return (stream << "right");
+    default:                break;
+    }
 }
