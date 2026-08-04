@@ -6,8 +6,9 @@ namespace UserInput{
     void ignoreLine();
     char getCharacter();
     char getCommandFromUser();
-    Direction inputConversion(const char& rawInput);
+    Direction inputConversion(char rawInput);
+    void printRandomDir();
     //void App();
     void App_Step5();
-    std::string directionConversion(const Direction& direction);
+    //std::string directionConversion(const Direction& direction);
 };

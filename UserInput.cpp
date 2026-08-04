@@ -1,6 +1,7 @@
 #include "UserInput.h"
 #include "Board.h"
 #include "Direction.h"
+#include "Tile.h"
 #include <iostream>
 #include <limits>
 
@@ -37,7 +38,7 @@ namespace UserInput
         return ch;
     }
 
-    Direction inputConversion(const char& rawInput){
+    Direction inputConversion(char rawInput){
         switch (rawInput)
         {
         case 'w':
@@ -67,23 +68,6 @@ namespace UserInput
         }
     }
 
-    // void App(){
-    //     Board board{};
-    //     std::cout << board;
-
-    //     while (true)
-    //     {
-    //         char ch{ UserInput::getCommandFromUser() };
-    //         std::cout << "You entered direction: " << ch << '\n';
-
-    //         if (ch == 'q')
-    //         {
-    //             std::cout << "\n\nBye!\n\n";
-    //             return;
-    //         }
-    //     }
-    // }
-
     void printRandomDir(){
         std::cout << "Generating random direction... " << Direction::random() << std::endl;
     }
@@ -106,7 +90,10 @@ namespace UserInput
                 return;
             }
 
-            std::cout << "You entered direction: " << inputConversion(ch) << '\n'; 
+        Direction dir{UserInput::inputConversion(ch)};
+        std::cout << "You entered direction: " << dir << '\n'; 
+        board.moveTile(dir); //to jest kurwa krzywe
+        std::cout << board; 
         }
     }
 };
