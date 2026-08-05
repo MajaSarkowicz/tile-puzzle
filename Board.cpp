@@ -42,3 +42,32 @@ void Board::moveTile(Direction dir){
     if(isValid(emptyTile) && isValid(adjecent)) 
         swapTiles(adjecent, emptyTile);
 }
+
+Board Board::randomize(){
+    for(int i{}; i < 1000; ++i){
+        Direction dir {Direction::random()}; 
+        this->moveTile(dir);
+    }
+    return *this;
+}
+
+bool operator==(Board b1, Board b2){
+    bool flag{false};
+    for (int i{}; i < s_size; ++i)
+    {
+        for (int j{}; j < s_size; ++j)
+        {
+            if(b1.m_tiles[i][j] == b2.m_tiles[i][j])
+                flag = true;
+            else   
+                return false;
+        }
+    }
+    return flag;
+    
+}
+
+bool Board::playerWon(){
+    Board solved{};
+    return (*this == solved);
+}

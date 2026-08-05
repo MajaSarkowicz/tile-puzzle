@@ -52,31 +52,10 @@ namespace UserInput
         }
     }
 
-    std::string directionConversion(const Direction& direction){
-        switch (direction.getType())
-        {
-        case Direction::up:
-            return "up";
-        case Direction::down:
-            return "down";
-        case Direction::left:
-            return "left";
-        case Direction::right:
-            return "right";
-        default:
-            return "unknown";
-        }
-    }
-
-    void printRandomDir(){
-        std::cout << "Generating random direction... " << Direction::random() << std::endl;
-    }
-
-    void App_Step5(){
+    void App(){
         Board board{};
+        board.randomize();
         std::cout << board;
-
-        for(int i{}; i<4; ++i) printRandomDir();
 
         std::cout << "Enter direction: ";
 
@@ -90,10 +69,14 @@ namespace UserInput
                 return;
             }
 
-        Direction dir{UserInput::inputConversion(ch)};
-        std::cout << "You entered direction: " << dir << '\n'; 
-        board.moveTile(dir); //to jest kurwa krzywe
-        std::cout << board; 
-        }
+            Direction dir{UserInput::inputConversion(ch)};
+            board.moveTile(dir); 
+            if(board.playerWon())
+            {
+                std::cout << "\n\nYou won!\n\n";
+                return;
+            }
+            std::cout << board;
     }
+}
 };

@@ -15,6 +15,7 @@ public:
     Board() = default;
     
     friend std::ostream& operator<<(std::ostream& out, Board board);
+    friend bool operator==(Board b1, Board b2);
     
     bool isValid(const Point& point){
         return (point.x < s_size && point.x >= 0 && point.y < s_size && point.y >= 0);
@@ -25,4 +26,8 @@ public:
     void swapTiles(Point p1, Point p2);
 
     void moveTile(Direction dir);
+
+    Board randomize();
+
+    bool playerWon();
 };
